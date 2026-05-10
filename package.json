@@ -1,0 +1,41 @@
+{
+  "name": "podcast-producer",
+  "version": "0.1.0",
+  "description": "Podcast producer agent starter with Google Gmail and Calendar OAuth.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubertcosta/podcast-producer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hubertcosta/podcast-producer/issues"
+  },
+  "homepage": "https://github.com/hubertcosta/podcast-producer#readme",
+  "dependencies": {
+    "googleapis": "^171.4.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "overrides": {
+    "postcss": "^8.5.14"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.6",
+    "postcss": "^8.5.14",
+    "typescript": "^6.0.3"
+  }
+}
