@@ -140,11 +140,27 @@ h1 {
   background: #e4ded1;
 }
 
+.button.danger {
+  background: #b3261e;
+}
+
+.button.danger:hover {
+  background: #8c1d18;
+}
+
+form {
+  margin: 0;
+}
+
 .grid {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin-top: 24px;
+}
+
+.grid.compact {
+  margin-top: 16px;
 }
 
 .step {

@@ -82,13 +82,14 @@ http://localhost:3000/api/google/callback
 
 ### 6. Add environment variables
 
-Copy the example file:
+After Google shows your **Client ID** and **Client Secret**, run:
 
 ```bash
-cp .env.example .env
+npm run setup:env
 ```
 
-Then edit `.env`:
+Paste the values when the script asks. It creates this local `.env` file for
+you:
 
 ```env
 GOOGLE_CLIENT_ID="paste-your-client-id-here"
@@ -115,6 +116,22 @@ marcus@libecapital.com
 ```
 
 After Google redirects back, the dashboard should show the connected email.
+Click **Test Google access** to confirm the app can access Gmail and Google
+Calendar.
+
+## What cannot be automated here
+
+Google requires the Workspace account owner to personally approve access. That
+means you must do these parts yourself:
+
+1. Create or approve the Google Cloud OAuth app.
+2. Copy the Client ID and Client Secret into your local `.env` file.
+3. Click **Connect Gmail & Calendar**.
+4. Approve the Google consent screen as `marcus@libecapital.com`.
+
+The app handles the rest: generating the Google authorization link, receiving
+the callback, saving the token locally for development, and testing Gmail and
+Calendar access.
 
 ## Local development token storage
 

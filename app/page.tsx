@@ -46,6 +46,11 @@ export default async function Home() {
             for <code>marcus@libecapital.com</code>. Google will show the exact
             permissions before you approve.
           </p>
+          <p>
+            I can build and run the agent code here, but Google requires you to
+            personally create/approve the OAuth app because it protects your
+            Workspace email, calendar, password, and 2FA.
+          </p>
 
           {!isConfigured ? (
             <div className="error">
@@ -59,9 +64,19 @@ export default async function Home() {
             <a className="button" href="/api/google/connect">
               Connect Gmail & Calendar
             </a>
+            <a className="button secondary" href="/api/google/test">
+              Test Google access
+            </a>
             <a className="button secondary" href="/api/google/status">
               View connection JSON
             </a>
+            {connectedEmail ? (
+              <form action="/api/google/disconnect" method="post">
+                <button className="button danger" type="submit">
+                  Disconnect
+                </button>
+              </form>
+            ) : null}
           </div>
         </section>
 
@@ -81,11 +96,55 @@ export default async function Home() {
             </p>
           </div>
           <div className="step">
-            <h3>3. Authorize</h3>
+            <h3>3. Run locally</h3>
             <p>
-              Start the app at <code>{appUrl}</code>, click the connect button,
-              and approve access as <code>marcus@libecapital.com</code>.
+              Use <code>npm run dev</code>, then open <code>{appUrl}</code> in
+              your browser.
             </p>
+          </div>
+          <div className="step">
+            <h3>4. Authorize</h3>
+            <p>
+              Click the connect button and approve access as{" "}
+              <code>marcus@libecapital.com</code>.
+            </p>
+          </div>
+          <div className="step">
+            <h3>5. Verify</h3>
+            <p>
+              Click <code>Test Google access</code>. It checks Gmail profile
+              access and Google Calendar free/busy access.
+            </p>
+          </div>
+        </section>
+
+        <section className="card" aria-labelledby="producer-heading">
+          <h2 id="producer-heading">What is ready after connection?</h2>
+          <div className="grid compact">
+            <div className="step">
+              <h3>Gmail</h3>
+              <ul>
+                <li>Send outreach from the connected Workspace inbox.</li>
+                <li>Read and classify replies in future agent steps.</li>
+                <li>Label or archive podcast outreach threads.</li>
+              </ul>
+            </div>
+            <div className="step">
+              <h3>Calendar</h3>
+              <ul>
+                <li>Check free/busy availability.</li>
+                <li>Create recording events in Google Calendar.</li>
+                <li>Add guests to the calendar invite.</li>
+              </ul>
+            </div>
+            <div className="step">
+              <h3>Next build step</h3>
+              <ul>
+                <li>Add a guest list database.</li>
+                <li>Add outreach generation and sending.</li>
+                <li>Add reply negotiation and booking logic.</li>
+              </ul>
+            </div>
           </div>
         </section>
       </div>
